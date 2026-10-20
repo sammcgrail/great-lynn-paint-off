@@ -1,0 +1,14 @@
+services:
+  artbattle:
+    build: .
+    container_name: artbattle
+    network_mode: bridge
+    restart: unless-stopped
+    ports:
+      - "20084:8080"
+    volumes:
+      - ./data:/data
+    environment:
+      - PUBLIC_URL=https://paintoff.sebland.com
+    mem_limit: 128m
+    cpus: 0.5
